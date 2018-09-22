@@ -2,7 +2,9 @@ language:
   - ruby
   - node_js
 cache: bundler
-install: gem install rails
+install:
+  - gem install bundler
+  - gem install rails
 env:
   global:
     MYSQL_USERNAME='root'
