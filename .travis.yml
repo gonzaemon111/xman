@@ -1,10 +1,7 @@
 language:
   - ruby
-  - node_js
 cache: bundler
-install:
-  - gem install bundler
-  - gem install rails
+dist: false
 env:
   global:
     MYSQL_USERNAME='root'
@@ -12,15 +9,15 @@ env:
     MYSQL_SOCKET='~travis/.my.cnf'
 rvm:
   - 2.5.1
+install: gem install rails
+bundler_args: "--without development --deployment -j4"
 servises:
   - mysql
 scripts:
-  - bundle install && yarn install
+  - bundle install
   - bundle exec rails db:create
   - bundle exec rails db:migrate
   - bundle exec rspec --color --require spec_helper --format progress spec
   - bundle exec rubocop
+  - yarn install
   - bin/webpack-dev-server
-
-# bundle install をキャッシュ
-# see: http://bekkou68.hatenablog.com/entry/2014/04/02/210754
