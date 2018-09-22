@@ -1,0 +1,21 @@
+language:
+  - ruby
+dist: false
+env:
+  global:
+    MYSQL_USERNAME='root'
+    MYSQL_HOST='127.0.0.1'
+    MYSQL_SOCKET='~travis/.my.cnf'
+rvm:
+  - 2.5.1
+servises:
+  - mysql
+before_scripts:
+  - bundle install --path vendor/bundle
+scripts:
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
+  - bundle exec rspec --color --require spec_helper --format progress spec
+  - bundle exec rubocop
+  - yarn install
+  - bin/webpack-dev-server
