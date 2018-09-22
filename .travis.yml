@@ -12,8 +12,6 @@ rvm:
   - 2.5.1
 servises:
   - mysql
-before_script:
-  - mysql -e 'create database myproject_test;'
 scripts:
   - bundle install && yarn install
   - bundle exec rails db:create
