@@ -13,18 +13,10 @@ gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 gem "webpacker"
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Reduces boot times through caching; required in config/boot.rb
+gem 'redis', '~> 4.0'
+gem 'bcrypt', '~> 3.1.7' # セキュアにパスワードを扱う用のgem https://qiita.com/tatane616/items/c00182179e498aa9c53e
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick', '~> 4.8'
 gem "bootsnap", ">= 1.1.0", require: false
 
 group :development, :test do
