@@ -1,6 +1,5 @@
 language:
   - ruby
-cache: bundler
 dist: false
 env:
   global:
@@ -9,12 +8,11 @@ env:
     MYSQL_SOCKET='~travis/.my.cnf'
 rvm:
   - 2.5.1
-before_install: bundle install --local
-bundler_args: "--without development --deployment -j4"
 servises:
   - mysql
-scripts:
+before_scripts:
   - bundle install --path vendor/bundle
+scripts:
   - bundle exec rails db:create
   - bundle exec rails db:migrate
   - bundle exec rspec --color --require spec_helper --format progress spec
