@@ -54,7 +54,6 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
-
   # deviseのrspec設定 > Xtreme参照すること
   # config.include Devise::Test::IntegrationHelpers
   # Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
