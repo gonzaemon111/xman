@@ -8,7 +8,8 @@ AllCops:
     - "vendor/**/*" # rubocop config/default.yml
     - "app/javascripts"
     - "db/*"
-    - "node_modules"
+    - "node_modules/**/*"
+
   DisplayCopNames: true
 
 Rails/ActionFilter:
@@ -92,7 +93,7 @@ Style/CollectionMethods:
     reduce: "inject"
 
 # Hash#has_key? は許可したい
-tyle/PreferredHashMethods:
+Style/PreferredHashMethods:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
